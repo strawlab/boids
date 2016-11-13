@@ -12,11 +12,9 @@ from numpy.random import random
 from scipy.spatial import cKDTree as kdtree
 
 class B(object):
-  def __init__(self, init_num, size, stp):
+  def __init__(self, init_num, stp):
     self.num = init_num
-    self.size = size
     self.stp = stp
-    self.one = 1.0/size
 
     self.rad = 0.04
 
