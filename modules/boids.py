@@ -12,7 +12,7 @@ from numpy.random import random
 from scipy.spatial import cKDTree as kdtree
 
 class B(object):
-  def __init__(self, init_num, stp, near_radius, start_dist=0.2):
+  def __init__(self, init_num, stp, near_radius, start_dist=0.2, slowdown = 0.9999):
     self.num = init_num
     self.stp = stp
 
@@ -25,7 +25,7 @@ class B(object):
     self.random_velocity(self.stp)
     self.tree = kdtree(self.xy)
 
-    self.slowdown = 0.99999
+    self.slowdown = slowdown
 
   def random_velocity(self, s):
     theta = random(self.num)*TWOPI
